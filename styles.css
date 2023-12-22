@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: bolder;
+    color: whitesmoke;
+    font-family: 'Courier New', Courier, monospace;
+}
+html {
+    background-color: rgb(39, 39, 53);
+}
+
+main{
+    display: flex;
+}
+#left{
+   width: 20%; 
+   border: 1px solid pink;
+}
+
+.right{
+    border: 1px solid blue;
+}
+input{
+    min-height: 1rem;
+    font-size: 3rem;
+    min-width: 40%;
+    background: none;
+    border: none;
+    margin: 0 1rem;
+}
+
+hr{
+    margin: 1rem 1rem;
+}
+
+textarea{
+    min-width: 99%  ;
+    min-height: 99vh;
+    background: none;
+}

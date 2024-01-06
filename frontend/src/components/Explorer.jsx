@@ -20,6 +20,7 @@ export const Explorer = () => {
                 </li>
               ))}
             </ul>
+            <Link  className="button footer" to={'/new'}>new</Link>
     </div>
   )
 }

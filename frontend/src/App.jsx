@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Editor } from './components/Editor'
 import { Explorer } from './components/Explorer'
 import { Route, Routes} from 'react-router-dom'
-// import { Pink } from './components/Pink'
+import { Home } from './pages/home'
 import { Note } from './pages/Note'
 
 //TODO: add indexed DB functionality done lmaooo
@@ -13,7 +13,8 @@ function App() {
     <main>
       <Explorer/>
       <Routes>
-        <Route path="/" element={<Editor/>} />
+        <Route path="/" element={<Home/>}/> 
+        <Route path="/new" element={<Editor/>} />
         <Route path="/:id" element={<Note/>} />
       </Routes>
     </main>

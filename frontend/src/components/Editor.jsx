@@ -15,7 +15,7 @@ export const Editor = (props) => {
 
   useEffect(()=>{
     if (props.title) setTitle(props.title);
-    if (props.note) setNote(props.note);
+    setNote(props.note || 'cat');
   }, [props.title, props.note]);
 
 
@@ -36,8 +36,9 @@ export const Editor = (props) => {
     <div className="right">
       <input type="text" placeholder="Title" onChange={handleTitle} value={title}/>
       <hr />
-      <textarea onChange={handleNote} value={note}></textarea>
-      <button onClick={autoSave}>save</button>
+      <textarea onChange={handleNote} value={note} disabled{...note==='cat'}>
+      </textarea>
+      <button onClick={autoSave} className="button footer" >save</button>
     </div>
   );
 };

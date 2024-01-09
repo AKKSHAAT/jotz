@@ -1,32 +1,53 @@
 import React, { useEffect, useState } from "react";
-import { db, autoSave} from "../utils/db";
-import { Pomodoro } from "./Pomodoro";
+import { autoSave} from "../utils/db";
 
 export const Editor = (props) => {
-  const [title, setTitle] = useState("");
-  const [note, setNote] = useState("");
+  const [note, setNote] = useState({title:"", note:"", id:""});
+
+  useEffect(() => {
+    if (props.title) {
+      setNote((prevNote) => ({
+        ...prevNote,
+        title: props.title,
+      }));
+    }
+    if (props.note) {
+      setNote((prevNote) => ({
+        ...prevNote,
+        note: props.note,
+      }));
+
+    if (props.id) {
+      setNote((prevNote) => ({
+        ...prevNote,
+        id: props.id
+      }));
+    }
+    }
+  }, [props.title, props.note]);
+  
 
   function handleTitle(e){
-    setTitle(e.target.value);
+    setNote({
+      ...note,
+      title: e.target.value
+    });
   }
 
   function handleNote(e){
-    setNote(e.target.value);
+    setNote({
+      ...note,
+      note: e.target.value
+    });
   }
-
-  useEffect(()=>{
-    if (props.title) setTitle(props.title);
-    if (props.note) setNote(props.note);
-  }, [props.title, props.note]);
-
 
   return (
     <div className="right">
-        <input type="text" placeholder="Title" onChange={handleTitle} value={title}/>
+        <input type="text" placeholder="Title" onChange={handleTitle} value={note.title}/>
         <hr />
-        <textarea onChange={handleNote} value={note}>
+        <textarea onChange={handleNote} value={note.note}>
         </textarea>
-      <button onClick={()=>{autoSave(title, note)}} className="button footer" >save</button>
+      <button onClick={()=>{autoSave(note)}} className="button footer" >save</button>
     </div>
   );
 };

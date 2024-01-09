@@ -23,7 +23,7 @@ export const Note = () => {
   return (
     <>
         {note ?(
-            <Editor note={note.note} title={note.title} />
+            <Editor note={note.note} title={note.title} id={note.id}/>
         ) : (
             <h2>loading notes...</h2>
         )}

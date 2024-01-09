@@ -14,16 +14,19 @@ export const DeleteNote = async (noteID, navigate)=>{
     });
 } 
 
-export const autoSave = async (title, note)=>{
+export const autoSave = async (n)=>{
+    const { id, ...noteWithoutId } = n;  //if id is blank it leaves the new entry in db with a blank id
     try{
-      const id = await db.notes.add({
-        title,
-        note
-      })
-      .then(id=>{
-        console.log("ADDED:   " + id);
-      })
-    } catch(error) {
-      console.log(error);
+        if(id){
+            await db.notes.put({...noteWithoutId, id})
+            .then(()=>console.log("updated::  " + id));
+        } else {
+            const newId = await db.notes.add(noteWithoutId)
+            .then(newId=>{
+              console.log("ADDED:   " + newId);
+            })
+        }
+    } catch (error) {
+      console.error(error);
     }
 }

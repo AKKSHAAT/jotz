@@ -1,12 +1,12 @@
 export const catImage = ` 
-    (\\(\\
-    /.. \\
-    \\Y_, '-.
-      )     '.
-      |  \\/   \\ 
-      \\\\ |\\_  |_
-      ((_/(__/_,'.
-           (,----'`;
+  (\\(\\
+  /.. \\
+  \\Y_, '-.
+    )     '.
+    |  \\/   \\ 
+    \\\\ |\\_  |_
+    ((_/(__/_,'.
+          (,----'`;
 
 export const randomCatMsgs = ()=>{
   let randomMsgs = Math.floor(Math.random() * catMesseges.length);

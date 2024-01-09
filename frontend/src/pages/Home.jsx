@@ -8,9 +8,11 @@ export const Home = () => {
     <div className='right'>
         <div className='cat-section'>
             <pre>
-                {catImage}
-            </pre>
+                <div>
+                  {catImage}
+                </div>
             <p>{randomCatMsgs()}</p>
+            </pre>
         </div>
     </div>
   )

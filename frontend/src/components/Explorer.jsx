@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import {useLiveQuery} from 'dexie-react-hooks'
-import { db } from '../utils/db'
-import { Link } from 'react-router-dom';
+import { db, DeleteNote} from '../utils/db'
+import { Link, useNavigate} from 'react-router-dom';
 
 export const Explorer = () => {
   const allNotes = useLiveQuery(() => db.notes.toArray() );
-
-  // try its own id to array, click to delete
+  const navigate = useNavigate();
   
   return (
     <div id="left">
@@ -17,6 +16,7 @@ export const Explorer = () => {
                   <Link to={`/${note.id}`}>
                     {note.title}
                   </Link>
+                  <button onClick={()=>{DeleteNote(note.id, navigate)}}>delete</button>
                 </li>
               ))}
             </ul>

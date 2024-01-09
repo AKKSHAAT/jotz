@@ -11,71 +11,112 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-*{
+* {
   margin: 0;
   padding: 0;
   font-size: 1rem;
   font-weight: bolder;
   color: whitesmoke;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }
 html {
   background-color: rgb(39, 39, 53);
 }
 
-.button{
+#left,
+.right,
+.pomodoro {
+  overflow: auto; /* Add scrollbar when content exceeds */
+  margin: 1rem;
+  padding: 1rem;
+  border: 2px solid pink; /* Adjust as needed */
+}
+
+.button {
   text-decoration: none;
   border: white solid 2px;
   background: none;
-  padding:0.1rem;
+  padding: 0.1rem;
 }
-.footer{
+.footer {
   position: absolute;
-  bottom:   10px;
+  bottom: 10px;
   right: 10px;
 }
-main{
+main {
   display: flex;
+  height: 100vh;
 }
 
-.pink{
-  background-color: pink;
+#left { 
+  max-width: 30%;
+  border: 2px solid pink;
+  position: relative;
 }
 
-#left{
- min-width: 20%; 
- border: 2px solid pink;
- margin: 0 1rem 0 0;
- padding: 1rem;
- position: relative;
+li {
+  margin-bottom: 10px;
 }
 
-.right{
+.pomodoro {
+  width: 20rem;
+  margin-left: 0;
+  right: 10px;
+  border: 1px blueviolet solid;
+}
+
+.right {
+  margin-left: 0;
+  position: relative;
   border: 2px solid rgb(145, 73, 108);
+  width: 100%;
 }
-input{
+input {
   padding: 1rem 1rem 0;
   min-height: 1rem;
   font-size: 3rem;
-  min-width: 35vw;
+  width: calc(100% - 1rem); /* Subtract padding from width */
   background: none;
   border: none;
-  margin: 0 ;
+  margin: 0;
 }
 
-hr{
+hr {
   margin: 1rem auto;
-  max-width: 90%;
+  width: calc(100% - 1rem); /* Subtract padding from width */
 }
-
-textarea{
+/* 
+textarea {
   border: none;
   padding: 1rem;
-  min-width: 80%;
+  width: inherit;
+  min-height: 70vh;
+  background: none;
+} */
+
+textarea {
+  border: none;
+  padding: 0.5rem; /* Adjust padding as needed */
+  width: calc(100% - 1rem); /* Subtract padding from width */
   min-height: 70vh;
   background: none;
 }
 
-.cat-section{
+/* cat stuff */
+
+.cat-section {
   padding: 1rem;
+  margin: auto;
 }
+.cat-section > pre{
+  /* border: 1px white solid; */
+  width: min-content;
+  margin: auto;
+  padding: auto;
+}
+
+.cat-section > pre > div {
+  color: rgb(202, 192, 81);
+  width: fit-content;
+  margin: auto;
+} 

@@ -21,13 +21,13 @@ export const Note = () => {
   })
 
   return (
-    <div>
+    <>
         {note ?(
             <Editor note={note.note} title={note.title} />
         ) : (
             <h2>loading notes...</h2>
         )}
-    </div>
+    </>
     
   )
 };

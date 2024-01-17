@@ -21,10 +21,12 @@ export const autoSave = async (n)=>{
             await db.notes.put({...noteWithoutId, id})
             .then(()=>console.log("updated::  " + id));
         } else {
-            const newId = await db.notes.add(noteWithoutId)
-            .then(newId=>{
-              console.log("ADDED:   " + newId);
-            })
+            if(n.title != "" && n.note != ""){
+                const newId = await db.notes.add(noteWithoutId)
+                .then(newId=>{
+                console.log("ADDED:   " + newId);
+                })
+            }
         }
     } catch (error) {
       console.error(error);

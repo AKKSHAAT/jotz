@@ -1,4 +1,7 @@
 :root {
+  --normalSize: 1.5rem;
+  /* --heading: 2rem; */
+  --btnColor: rgb(69, 69, 90);
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -12,9 +15,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 * {
+  font-size: 1rem;
   margin: 0;
   padding: 0;
-  font-size: 1rem;
   font-weight: bolder;
   color: whitesmoke;
   font-family: "Courier New", Courier, monospace;
@@ -29,14 +32,24 @@ html {
   overflow: auto; /* Add scrollbar when content exceeds */
   margin: 1rem;
   padding: 1rem;
-  border: 2px solid pink; /* Adjust as needed */
+  border: 2px solid pink; 
 }
 
 .button {
+  display: block; 
+  max-height: 2rem;
   text-decoration: none;
-  border: white solid 2px;
+  border: none;
+  /* font-size: var(--heading); */
   background: none;
-  padding: 0.1rem;
+  padding: 0.1rem 0.5rem 0;
+}
+
+.large {
+  margin: auto;
+  padding: 1rem 2rem;
+  font-size: var(--heading);
+  border: 2px solid var(--btnColor);
 }
 .footer {
   position: absolute;
@@ -49,13 +62,41 @@ main {
 }
 
 #left { 
+  min-width: 15%;
   max-width: 30%;
   border: 2px solid pink;
   position: relative;
 }
+#left > p {
+  font-size: var(--heading);
+}
 
 li {
+  padding: 0.5rem;
+  border: 2px solid var(--btnColor);
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 10px;
+}
+
+/* note list view */
+.note-list {
+  margin: 1px;
+  border: none;
+  display: block;
+}
+
+.checkbox{
+  margin-right: 8px; /* Adjust the margin as needed */
+  border: 2px white solid;
+  background: none;
+}
+
+
+li input[type="text"] {
+  background: none;
+  border: none;
+  width: auto;
 }
 
 .pomodoro {
@@ -71,7 +112,13 @@ li {
   border: 2px solid rgb(145, 73, 108);
   width: 100%;
 }
-input {
+
+.right > button {
+  position: absolute;
+  right: 2rem;
+  bottom: 1.5rem;
+}
+.title {
   padding: 1rem 1rem 0;
   min-height: 1rem;
   font-size: 3rem;
@@ -95,6 +142,8 @@ textarea {
 } */
 
 textarea {
+  /* font-size: var(--normalSize); */
+  resize:none;
   border: none;
   padding: 0.5rem; /* Adjust padding as needed */
   width: calc(100% - 1rem); /* Subtract padding from width */
@@ -118,5 +167,6 @@ textarea {
 .cat-section > pre > div {
   color: rgb(202, 192, 81);
   width: fit-content;
-  margin: auto;
+  margin: 1rem auto;
 } 
+

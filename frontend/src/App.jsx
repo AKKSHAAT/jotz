@@ -1,4 +1,3 @@
-`//TODO:FIX INPUT AND TEXTAREA CSS `
 import { useState } from 'react'
 import { Editor } from './components/Editor'
 import { Explorer } from './components/Explorer'

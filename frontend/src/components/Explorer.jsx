@@ -2,13 +2,18 @@ import React, { useEffect, useState } from 'react'
 import {useLiveQuery} from 'dexie-react-hooks'
 import { db, DeleteNote} from '../utils/db'
 import { Link, useNavigate} from 'react-router-dom';
+import { NewButton } from './NewButton';
 
 export const Explorer = () => {
+  const [hamburger, setHamburger] = useState(true);
+  
   const allNotes = useLiveQuery(() => db.notes.toArray() );
   const navigate = useNavigate();
 
   return (
-    <div id="left">
+    <>
+    <button className='button' onClick={()=> setHamburger(!hamburger)}>🗒️</button>
+    <div id="left" style={hamburger ? {display:'block'} : {display:'none'}}>
             <p>all notes</p>
             <ul>
               { allNotes?.map((note)=>(
@@ -22,9 +27,11 @@ export const Explorer = () => {
                 </li>
               ))}
             </ul>
-            <Link  className="button footer" to={'/new'}>
-              <i className="fa-solid fa-plus"></i>
-            </Link>
+            <div className='footer'>
+            <NewButton />
+
+            </div>
     </div>
+    </>
   )
 }

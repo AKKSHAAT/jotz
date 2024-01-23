@@ -1,57 +1,36 @@
 import React, { useEffect, useState } from "react";
 import { autoSave} from "../utils/db";
+import {useNavigate} from 'react-router-dom';
 
 export const Editor = (props) => {
   const [note, setNote] = useState({title:"", note:"", id:""});
   const [listView, setListView] = useState(false);
   const [noteArray, setNoteArray] = useState([]);
+  const navigate = useNavigate();
 
-
-  let saveTimer;
   useEffect(() => {
+    let saveTimer;
     if (note.id) {
       saveTimer = setTimeout(() => {
         autoSave(note);
-      }, 2000); 
-    }
+      }, 2000);
 
-    return () => {
-      clearTimeout(saveTimer); // Clear the timer when the component unmounts or note changes
-    };
+      return () => clearTimeout(saveTimer);
+    }
   }, [note]);
 
-  useEffect(() => {
-    clearTimeout(saveTimer);
-    const newTimer = setTimeout(() => {
-      autoSave(note);
-    }, 2000); 
 
-    return () => {
-      clearTimeout(newTimer);
-    };
-  }, [note]);
-
-  useEffect(() => {  //updates note state when prop is sent
-    if (props.title) {
+  //props
+  useEffect(() => { //updates note state when prop is sent
+    if (props.title || props.note || props.id) {
       setNote((prevNote) => ({
         ...prevNote,
-        title: props.title,
+        title: props.title || "",
+        note: props.note || "",
+        id: props.id || "",
       }));
     }
-    if (props.note) {
-      setNote((prevNote) => ({
-        ...prevNote,
-        note: props.note,
-      }));
-
-    if (props.id) {
-      setNote((prevNote) => ({
-        ...prevNote,
-        id: props.id
-      }));
-    }
-    }
-  }, [props.title, props.note]);
+  }, [props.title, props.note, props.id]);
   
 
   function handleTitle(e){
@@ -68,15 +47,12 @@ export const Editor = (props) => {
     });
   }
 
-  function handleListView(){
-    if(listView){
+  function handleListView() {
+    if (listView) {
       setListView(false);
     } else {
       setListView(true);
-      setNoteArray(()=>{
-        return note.note.split('\n');
-      });
-      console.log(noteArray);
+      setNoteArray(note.note.split('\n').filter((text) => text.trim() !== ''));
     }
   }
 
@@ -84,22 +60,22 @@ export const Editor = (props) => {
     <div className="right">
         <input className="title" type="text" placeholder="Title" onChange={handleTitle} value={note.title}/>
         <button className="button" onClick={handleListView}>
-          <i class={listView ? "fa-solid fa-bars" : "fa-regular fa-square-check"}></i>
+          <i className={listView ? "fa-solid fa-bars" : "fa-regular fa-square-check"}></i>
         </button>
         <hr />
         {listView ? (
           <ul>
             {noteArray.filter(text => text.trim() !== '').map((text, index) => (
               <li className="note-list" key={index}>
-                <input className="checkbox" type="checkbox"></input>
-                <input type="text" value={text} ></input>
+                <input className="checkbox" type="checkbox" />
+                <input type="text" value={text} />
               </li>
             ))}
           </ul>
         ) : (
           <textarea onChange={handleNote} value={note.note}></textarea>
         )}
-      {/* <button onClick={()=>{autoSave(note)}} className="button footer" >save</button> */}
+  
     </div>
   );
 };

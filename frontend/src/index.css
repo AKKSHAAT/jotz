@@ -62,8 +62,8 @@ main {
 }
 
 #left { 
-  min-width: 15%;
-  max-width: 30%;
+  min-width: 15rem;
+  max-width: 15rem;
   border: 2px solid pink;
   position: relative;
 }
@@ -100,7 +100,8 @@ li input[type="text"] {
 }
 
 .pomodoro {
-  width: 20rem;
+  min-width: 15rem;
+  max-width: 15rem;
   margin-left: 0;
   right: 10px;
   border: 1px blueviolet solid;
@@ -169,4 +170,3 @@ textarea {
   width: fit-content;
   margin: 1rem auto;
 } 
-

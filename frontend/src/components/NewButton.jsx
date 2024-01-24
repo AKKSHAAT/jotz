@@ -1,14 +1,14 @@
 import React from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
-import { v4 as uuidv4 } from 'uuid';
 import { db } from '../utils/db';
 
 
 export const NewButton = ({large}) => {
     const navigate = useNavigate();
+    const date = new Date(); // To generate IDs
 
     const generateNote = async ()=>{
-        const newID = parseInt(uuidv4())
+        const newID = parseInt(date.valueOf());
         const blankNote = {
             id: newID,
             title: "",

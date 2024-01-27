@@ -15,7 +15,7 @@ export const Home = () => {
                 </div>
             <p>{randomCatMsgs()}</p>
             <div>
-            <NewButton large={"large"}/>
+            <NewButton classes={"large"}/>
             </div>
             </pre>
         </div>

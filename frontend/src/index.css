@@ -1,8 +1,8 @@
 :root {
   --normalSize: 1.5rem;
-  /* --heading: 2rem; */
-  --btnColor: rgb(69, 69, 90);
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --btnColor: rgb(98, 98, 118);
+  --hamColor: rgb(46, 46, 62);
+
   line-height: 1.5;
   font-weight: 400;
 
@@ -15,40 +15,36 @@
   -moz-osx-font-smoothing: grayscale;
 }
 * {
-  font-size: 1rem;
+
+  font-size: 16px;
   margin: 0;
   padding: 0;
-  font-weight: bolder;
+  /* font-weight: bolder; */
   color: whitesmoke;
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Space Mono', monospace;
+}
+*:focus {
+  outline: none;
 }
 html {
   background-color: rgb(39, 39, 53);
 }
 
-#left,
-.right,
-.pomodoro {
-  overflow: auto; /* Add scrollbar when content exceeds */
-  margin: 1rem;
-  padding: 1rem;
-  border: 2px solid pink; 
-}
+
 
 .button {
   display: block; 
   max-height: 2rem;
   text-decoration: none;
   border: none;
-  /* font-size: var(--heading); */
   background: none;
   padding: 0.1rem 0.5rem 0;
 }
-
+.button > i{
+  color: var(--btnColor);
+}
 .large {
-  margin: auto;
   padding: 1rem 2rem;
-  font-size: var(--heading);
   border: 2px solid var(--btnColor);
 }
 .footer {
@@ -61,15 +57,7 @@ main {
   height: 100vh;
 }
 
-#left { 
-  min-width: 15rem;
-  max-width: 15rem;
-  border: 2px solid pink;
-  position: relative;
-}
-#left > p {
-  font-size: var(--heading);
-}
+
 
 li {
   padding: 0.5rem;
@@ -99,38 +87,26 @@ li input[type="text"] {
   width: auto;
 }
 
-.pomodoro {
-  min-width: 15rem;
-  max-width: 15rem;
-  margin-left: 0;
-  right: 10px;
-  border: 1px blueviolet solid;
-}
 
 .right {
-  margin-left: 0;
-  position: relative;
-  border: 2px solid rgb(145, 73, 108);
+  padding: 1rem,0;
   width: 100%;
 }
 
-.right > button {
-  position: absolute;
-  right: 2rem;
-  bottom: 1.5rem;
-}
+
+
 .title {
-  padding: 1rem 1rem 0;
+  padding: 1rem 0.5rem 0;
   min-height: 1rem;
   font-size: 3rem;
-  width: calc(100% - 1rem); /* Subtract padding from width */
+  width: calc(100% - 2rem); /* Subtract padding from width */
   background: none;
   border: none;
   margin: 0;
 }
 
 hr {
-  margin: 1rem auto;
+  margin: 0.5rem auto;
   width: calc(100% - 1rem); /* Subtract padding from width */
 }
 /* 

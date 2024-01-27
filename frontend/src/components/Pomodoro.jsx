@@ -4,7 +4,6 @@ import React from 'react'
 export const Pomodoro = () => {
 
   const TIME_IN_SECONDS = 150; //change to 1500 for 25 mins
-  const [hamburger, setHamburger] = useState(true);
   const [time, setTime] = useState(TIME_IN_SECONDS);
   const [progress, setProgress] = useState(0);
   const [isActive, setIsActive] = useState(false);
@@ -24,20 +23,17 @@ export const Pomodoro = () => {
     setProgress(p);
   }, [time]);
 
-  // Format the time for display
+  // Format the time for UI
   const formattedTime = `${Math.floor(time / 60)}:${String(time % 60).padStart(2, "0")}`;
+  
   function resetTimer() {
     setIsActive(!isActive);
     setTime(TIME_IN_SECONDS); // Reset to 25 minutes
   }
 
-  const hamburgerToggle = ()=>{
-    setHamburger(!hamburger);
-  }
-
   return (
     <>
-    <div className="pomodoro" style={hamburger ? {display: "block"} : {display: "none"}}>
+    <div className="pomodoro">
     <p>Pomodoro 🍅</p>
       <p>{ formattedTime }</p>
       <progress value={progress} max={100}></progress>
@@ -45,7 +41,6 @@ export const Pomodoro = () => {
         {isActive ? <i className="fa-solid fa-rotate-right"></i> : <i className="fa-solid fa-play"></i> }
       </button>
     </div>
-    <button className="button" onClick={hamburgerToggle}>🍅</button>
     </>
   );
 }

@@ -1,0 +1,38 @@
+#left,
+.right {
+  overflow: auto; /* Add scrollbar when content exceeds */
+  
+  margin: 1rem;
+  border: 2px solid pink;
+}
+
+#left {
+  margin-right: 0;
+  min-width: 17rem;
+  max-width: 17rem;
+  display: flex;
+  min-width: 3rem;
+}
+
+#left > section {
+}
+
+.explorer,
+.pomodoro {
+    margin: 0.5rem;
+  width: 13rem;
+}
+
+.ham-burger {
+    background-color: var(--hamColor);
+  width: 3rem;
+}
+
+.ham-burger > button {
+  font-size: 1rem;
+  margin: 0 auto 1rem;
+}
+
+#left.isOpen {
+  min-width: 17rem;
+}

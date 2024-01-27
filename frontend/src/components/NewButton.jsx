@@ -3,7 +3,7 @@ import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { db } from '../utils/db';
 
 
-export const NewButton = ({large}) => {
+export const NewButton = ({classes}) => {
     const navigate = useNavigate();
     const date = new Date(); // To generate IDs
 
@@ -27,7 +27,7 @@ export const NewButton = ({large}) => {
 
   return (
     <button  onClick={generateNote} className="button" to={'/new'}>
-              <i className={`fa-solid fa-plus ${large}`}> </i>
+              <i className={`fa-solid fa-plus ${classes}`}> </i>
     </button>
   )
 }

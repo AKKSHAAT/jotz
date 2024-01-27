@@ -12,8 +12,7 @@ export const Explorer = () => {
 
   return (
     <>
-    <button className='button' onClick={()=> setHamburger(!hamburger)}>🗒️</button>
-    <div id="left" style={hamburger ? {display:'block'} : {display:'none'}}>
+    <div className="explorer">
             <p>all notes</p>
             <ul>
               { allNotes?.map((note)=>(

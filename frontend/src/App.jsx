@@ -3,6 +3,7 @@ import { Editor } from './components/Editor'
 import { Explorer } from './components/Explorer'
 import { Route, Routes} from 'react-router-dom'
 import { Pomodoro } from './components/Pomodoro'
+import { LeftMenu } from './components/LeftMenu'
 import { Home
  } from './pages/home'
 import { Note } from './pages/Note'
@@ -13,13 +14,13 @@ function App() {
 
   return (
     <main>
-      <Explorer/>
+      {/* <Explorer/> */}
+      <LeftMenu/>
       <Routes>
         <Route path="/" element={<Home/>}/> 
         <Route path="/new" element={<Editor/>} />
         <Route path="/:id" element={<Note/>} />
       </Routes>
-      <Pomodoro />
     </main>
   )
 }

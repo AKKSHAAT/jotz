@@ -40,17 +40,17 @@ export const LeftMenu = () => {
   return (
     <div id="left">
       <div className='ham-burger'>
-        <button className='button' onClick={() => dispatch({ type: 'TOGGLE_POMODORO' })}>
-          🍅
-        </button>
         <button className='button' onClick={() => dispatch({ type: 'TOGGLE_EXPLORER' })}>
           🗒️
+        </button>
+        <button className='button' onClick={() => dispatch({ type: 'TOGGLE_POMODORO' })}>
+          🍅
         </button>
       </div>
 
       <section>
-        {hamburger.Pomodoro ? <Pomodoro style={PomodoroStyle} /> : <></>}
         {hamburger.Explorer ? <Explorer style={ExplorerStyle} /> : <></>}
+        {hamburger.Pomodoro ? <Pomodoro style={PomodoroStyle} /> : <></>}
       </section>
     </div>
   );

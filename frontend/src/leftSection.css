@@ -24,7 +24,8 @@
 }
 
 .ham-burger {
-    background-color: var(--hamColor);
+  padding: 2.5rem 0;
+  background-color: var(--hamColor);
   width: 3rem;
 }
 

@@ -49,8 +49,8 @@ html {
 }
 .footer {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 0;
+  right: 0;
 }
 main {
   display: flex;
@@ -61,7 +61,6 @@ main {
 
 li {
   padding: 0.5rem;
-  border: 2px solid var(--btnColor);
   display: flex;
   justify-content: space-between;
   margin-bottom: 10px;
@@ -135,8 +134,9 @@ textarea {
   margin: auto;
 }
 .cat-section > pre{
+  width: 50%;
   /* border: 1px white solid; */
-  width: min-content;
+  text-wrap: wrap;
   margin: auto;
   padding: auto;
 }

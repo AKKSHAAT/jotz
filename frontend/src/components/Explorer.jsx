@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {useLiveQuery} from 'dexie-react-hooks'
 import { db, DeleteNote} from '../utils/db'
 import { Link, useNavigate} from 'react-router-dom';
-import { NewButton } from './NewButton';
+import { NewButton } from './newButton';
 
 export const Explorer = () => {
   const [hamburger, setHamburger] = useState(true);
@@ -26,9 +26,9 @@ export const Explorer = () => {
                 </li>
               ))}
             </ul>
+
             <div className='footer'>
             <NewButton />
-
             </div>
     </div>
     </>

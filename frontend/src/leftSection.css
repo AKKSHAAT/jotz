@@ -1,9 +1,24 @@
 #left,
 .right {
   overflow: auto; /* Add scrollbar when content exceeds */
-  
+
   margin: 1rem;
   border: 2px solid pink;
+}
+
+.make-red {
+  background-color: tomato;
+}
+
+.make-red * {
+  color: black;
+}
+.make-red > li {
+  border: 2px solid black;
+}
+
+.make-red button i {
+  color: black;
 }
 
 #left {
@@ -19,13 +34,15 @@
 
 .explorer,
 .pomodoro {
-    margin: 0.5rem;
+  height: 98%;
+  position: relative;
+  margin: 0.5rem;
   width: 13rem;
 }
 
 .ham-burger {
   padding: 2.5rem 0;
-  background-color: var(--hamColor);
+  /* background-color: var(--hamColor); */
   width: 3rem;
 }
 

@@ -9,10 +9,10 @@ export const Home = () => {
     <div className='right'>
         <div className='cat-section'>
             <pre>
+            <p>{randomCatMsgs()}</p>
                 <div>
                   {catImage}
                 </div>
-            <p>{randomCatMsgs()}</p>
             <div>
             <NewButton classes={"large"}/>
             </div>

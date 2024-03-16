@@ -15,13 +15,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 * {
-
   font-size: 16px;
   margin: 0;
   padding: 0;
   /* font-weight: bolder; */
   color: whitesmoke;
-  font-family: 'Space Mono', monospace;
+  font-family: "Space Mono", monospace;
 }
 *:focus {
   outline: none;
@@ -29,18 +28,15 @@
 html {
   background-color: rgb(39, 39, 53);
 }
-
-
-
 .button {
-  display: block; 
+  display: block;
   max-height: 2rem;
   text-decoration: none;
   border: none;
   background: none;
   padding: 0.1rem 0.5rem 0;
 }
-.button > i{
+.button > i {
   color: var(--btnColor);
 }
 .large {
@@ -52,12 +48,23 @@ html {
   bottom: 0;
   right: 0;
 }
+
 main {
   display: flex;
   height: 100vh;
+  overflow: hidden; /* Hide overflow to prevent scrollbars */
 }
 
+nav {
+  border: 1px solid white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
 
+nav button {
+  margin: 0 0.5rem;
+}
 
 li {
   padding: 0.5rem;
@@ -73,12 +80,11 @@ li {
   display: block;
 }
 
-.checkbox{
+.checkbox {
   margin-right: 8px; /* Adjust the margin as needed */
   border: 2px white solid;
   background: none;
 }
-
 
 li input[type="text"] {
   background: none;
@@ -86,13 +92,11 @@ li input[type="text"] {
   width: auto;
 }
 
-
 .right {
-  padding: 1rem,0;
+  margin-left: 1rem;
+  padding: 1rem, 0;
   width: 100%;
 }
-
-
 
 .title {
   padding: 1rem 0.5rem 0;
@@ -119,7 +123,7 @@ textarea {
 
 textarea {
   /* font-size: var(--normalSize); */
-  resize:none;
+  resize: none;
   border: none;
   padding: 0.5rem; /* Adjust padding as needed */
   width: calc(100% - 1rem); /* Subtract padding from width */
@@ -133,7 +137,7 @@ textarea {
   padding: 1rem;
   margin: auto;
 }
-.cat-section > pre{
+.cat-section > pre {
   width: 50%;
   /* border: 1px white solid; */
   text-wrap: wrap;
@@ -145,4 +149,4 @@ textarea {
   color: rgb(202, 192, 81);
   width: fit-content;
   margin: 1rem auto;
-} 
+}

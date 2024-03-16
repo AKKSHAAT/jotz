@@ -1,8 +1,7 @@
 #left,
 .right {
   overflow: auto; /* Add scrollbar when content exceeds */
-
-  margin: 1rem;
+  /* margin: 1rem; */
   border: 2px solid pink;
 }
 

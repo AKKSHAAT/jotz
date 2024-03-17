@@ -3,6 +3,7 @@
   overflow: auto; /* Add scrollbar when content exceeds */
   /* margin: 1rem; */
   border: 2px solid pink;
+  height: calc(100vh - 2rem);
 }
 
 .make-red {

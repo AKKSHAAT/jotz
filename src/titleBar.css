@@ -1,0 +1,14 @@
+#title-button {
+  background: none;
+  border: none;
+  margin: 0 0.9rem;
+  -webkit-app-region: no-drag;
+}
+
+nav {
+  user-select: none;
+  -webkit-app-region: drag;
+  padding: 0.1rem 0.2rem;
+  justify-content: space-between;
+  display: flex;
+}

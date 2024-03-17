@@ -1,5 +1,5 @@
-const { app, BrowserWindow } = require('electron');
-const path = require('path');
+const { app, BrowserWindow } = require("electron");
+const path = require("path");
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -12,30 +12,30 @@ function createWindow() {
   window = new BrowserWindow({
     width: 800,
     height: 600,
-    frame: false ,
+    titleBarStyle: "hidden",
     webPreferences: {
       nodeIntegration: true,
-      contextIsolation: false
+      contextIsolation: false,
     },
   });
 
   // Load the index.html of the app.
   // This will give an error for now, since we will be using a React app instead of a file.
-  window.loadURL('http://localhost:5173/');
+  window.loadURL("http://localhost:5173/");
   window.show();
 }
 
-app.on('ready', () => {
+app.on("ready", () => {
   createWindow();
 });
 
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
+app.on("window-all-closed", () => {
+  if (process.platform !== "darwin") {
     app.quit();
   }
 });
 
-app.on('activate', () => {
+app.on("activate", () => {
   // On macOS it's common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.
   if (BrowserWindow.getAllWindows().length === 0) {

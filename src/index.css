@@ -49,21 +49,13 @@ html {
   right: 0;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
 main {
   display: flex;
-  height: 100vh;
+  height: calc(100vh -1);
   overflow: hidden; /* Hide overflow to prevent scrollbars */
-}
-
-nav {
-  border: 1px solid white;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-nav button {
-  margin: 0 0.5rem;
 }
 
 li {

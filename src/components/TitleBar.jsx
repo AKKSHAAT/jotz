@@ -1,24 +1,11 @@
 import React from "react";
 
 export const TitleBar = () => {
-  // const API = {
-  //   close: ()=> ipcRenderer.send("app/close"),
-  //   minimize: ()=> ipcRenderer.send("app/minimize"),
-  //   maxamize: ()=> ipcRenderer.send("app/maxamize")
-  // }
+  const closeApp = (e) => {};
 
-  const closeApp = (e) => {
-    e.preventDefault();
-    app.quit();
-  };
+  const minimize = () => {};
 
-  const minimize = () => {
-    app.window.minimize();
-  };
-
-  const maxamize = () => {
-    app.window.maxamize();
-  };
+  const maxamize = () => {};
   return (
     <nav>
       <p>Jotz</p>

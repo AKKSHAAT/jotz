@@ -7,30 +7,25 @@ Jotz is a versatile React-based productivity app designed to enhance your effici
 ## Table of Contents
 
 - [Features](#features)
-- [Usage](#usage)
-- [Installation](#installation)
-- [Customization](#customization)
-- [Project Structure](#project-structure)
-- [Advanced Features](#advanced-features)
-- [Contributing](#contributing)
+- [Getting Started](#getting-started)
 - [License](#license)
 
 ## Features
 
 - **Pomodoro Timer**: Boost productivity with timed work and break intervals using the Pomodoro technique.
 
-- **Explorer Component**: Efficiently organize notes and tasks with an intuitive Explorer interface.
+- **One place to store all your notes**: Efficiently organize notes and tasks with an intuitive Explorer interface.
 
 - **Autosaving**: Seamlessly save your notes in real-time, ensuring no data loss.
 
-- **Customization**: Tailor the application to your preferences with flexible styling and components.
 
-## Usage
-
+## Getting Started
 1. **Clone the repository:**
 
     ```bash
     git clone https://github.com/AKKSHAAT/jotz.git
+    ```
+    ```
     cd jotz
     ```
 
@@ -40,52 +35,16 @@ Jotz is a versatile React-based productivity app designed to enhance your effici
     npm install
     ```
 
-3. **Start the application:**
+3. **Start the frontend**
 
     ```bash
-    npm start
+    npm dev
     ```
+4. **run electron (in a separate terminal)**
 
-    The app will be accessible at [http://localhost:3000/](http://localhost:3000/).
-
-## Installation
-
-For a more detailed setup and configuration, refer to the [Installation Guide](docs/installation.md).
-
-## Customization
-
-- **Styles:**
-  Adjust the styles in the `styles` directory to match your design preferences.
-
-- **Components:**
-  Modify the components (`Explorer.js`, `Pomodoro.js`, `Editor.js`, etc.) to enhance or alter their functionalities.
-
-## Project Structure
-
-
-    /src
-    |-- components
-    | |-- Explorer.js
-    | |-- Pomodoro.js
-    | |-- LeftMenu.js
-    |-- styles
-    | |-- App.css
-    | |-- Explorer.css
-    | |-- Pomodoro.css
-    |-- App.js
-    |-- index.js
-    |-- README.md
-    |-- ...other files
-
-Feel free to customize the project structure and styles according to your preferences.
-
-## Customization
-
-- **Styles:**
-  Adjust the styles in the `styles` directory to match your design preferences.
-
-- **Components:**
-  Modify the components (`Explorer.js` and `Pomodoro.js`) to enhance or alter their functionalities.
+    ```bash
+    npm electron
+    ```
 
 ## License
 

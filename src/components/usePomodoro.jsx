@@ -1,8 +1,8 @@
 import { useState, useEffect, useReducer } from "react";
 import React from "react";
 
-const MINS_25 = 25; //change to 1500 for 25 mins
-const MINS_5 = 5;
+const MINS_25 = 1500; //change to 1500 for 25 mins
+const MINS_5 = 900;
 
 const actionTypes = {
   START_TIMER: "START_TIMER",

@@ -1,5 +1,10 @@
-const { app, BrowserWindow } = require("electron");
-const path = require("path");
+const { app, BrowserWindow, ipcMain } = require("electron");
+const path = require("node:path");
+
+ipcMain.on("closeApp", () => {
+  console.log("recived");
+  // app.quit();
+});
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -14,9 +19,15 @@ function createWindow() {
     height: 600,
     titleBarStyle: "hidden",
     webPreferences: {
-      nodeIntegration: true,
-      contextIsolation: false,
+      preload: path.join(__dirname, 'preload.js'),
+      nodeIntegration: false
     },
+
+    "extraResources": [
+      "./preload.js",
+      "electron/electron-actions/*,"
+    ]
+    
   });
 
   // Load the index.html of the app.

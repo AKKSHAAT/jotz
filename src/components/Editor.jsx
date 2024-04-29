@@ -68,7 +68,8 @@ export const Editor = (props) => {
             {noteArray.filter(text => text.trim() !== '').map((text, index) => (
               <li className="note-list" key={index}>
                 <input className="checkbox" type="checkbox" />
-                <input type="text" value={text} />
+                <input type="text" value={text} />   
+                {/* TODO: yaha pe shyd onchange ka kuch kaam hai idk i get a warning */}
               </li>
             ))}
           </ul>

@@ -4,15 +4,17 @@
   "version": "0.0.0",
   "type": "module",
   "main": "electron/main.cjs",
-    "scripts": {
-      "build": "vite build",
-      "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-      "preview": "vite preview",
-      "electron": "nodemon --exec electron .",
-      "dev": "vite",
-      "start": "concurrently \"vite\" \"electron\""
-    },
+  "scripts": {
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "electron": "nodemon --exec electron .",
+    "dev": "vite",
+    "start": "concurrently \"vite\" \"electron\""
+  },
   "dependencies": {
+    "@mdxeditor/editor": "^3.0.3",
+    "@tailwindcss/typography": "^0.5.13",
     "concurrently": "^8.2.2",
     "dexie": "^3.2.4",
     "dexie-react-hooks": "^1.1.7",
@@ -25,11 +27,14 @@
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@vitejs/plugin-react-swc": "^3.5.0",
+    "autoprefixer": "^10.4.19",
     "electron": "^29.1.4",
     "eslint": "^8.55.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
     "vite": "^5.0.8"
   }
 }

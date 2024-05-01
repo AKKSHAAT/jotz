@@ -5,6 +5,7 @@ import { LeftMenu } from "./components/LeftMenu";
 import { Home } from "./pages/home";
 import { Note } from "./pages/Note";
 import { TitleBar } from "./components/TitleBar";
+import NewEditor from "./components/NewEditor";
 // import is from "electron-is";
 
 //TODO: add indexed DB functionality done lmaooo
@@ -41,7 +42,8 @@ function App() {
         <LeftMenu />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/new" element={<Editor />} />
+          {/* <Route path="/new" element={<Editor />} /> */}
+          <Route path="/new" element={<NewEditor />} />
           <Route path="/:id" element={<Note />} />
         </Routes>
       </main>

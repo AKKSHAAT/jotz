@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --normalSize: 1.5rem;
   --btnColor: rgb(98, 98, 118);
@@ -15,7 +19,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 * {
-  font-size: 16px;
+  /* font-size: 16px; */
   margin: 0;
   padding: 0;
   /* font-weight: bolder; */

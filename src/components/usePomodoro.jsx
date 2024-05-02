@@ -113,7 +113,7 @@ export const usePomodoro = () => {
             {pomodoroTimer.type === "work" ? "work- shes" : "break- sesh"}
           </p>
           <p>{formattedTime}</p>
-          <progress value={pomodoroTimer.progress} max={100}></progress>
+          <progress className="p-bar" value={pomodoroTimer.progress} max={100}></progress>
           <button className="button" onClick={resetTimer}>
             {pomodoroTimer.isActive ? (
               <i class="fa-solid fa-pause"></i>

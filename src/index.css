@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --normalSize: 1.5rem;
   --btnColor: rgb(98, 98, 118);
@@ -12,8 +13,6 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-
-  font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -54,7 +53,15 @@ html {
 }
 
 ::-webkit-scrollbar {
-  display: none;
+  @apply w-2;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-[#555] rounded-md;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
 }
 main {
   display: flex;
@@ -62,12 +69,7 @@ main {
   overflow: hidden; /* Hide overflow to prevent scrollbars */
 }
 
-li {
-  padding: 0.5rem;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
+
 
 /* note list view */
 .note-list {
@@ -95,9 +97,10 @@ li input[type="text"] {
 }
 
 .title {
-  padding: 1rem 0.5rem 0;
+  padding: 1rem 1rem 0;
   min-height: 1rem;
   font-size: 3rem;
+  font-weight: bold;
   width: calc(100% - 2rem); /* Subtract padding from width */
   background: none;
   border: none;

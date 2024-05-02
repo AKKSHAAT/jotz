@@ -6,6 +6,41 @@
   height: calc(100vh - 2rem);
 }
 
+
+#left li {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+progress {
+  border: none;
+  height: 10px;
+  border-radius: 20px;
+  background: gray;
+}
+progress::-webkit-progress-bar {
+  background: gray;
+  border: none;
+  height: 10px;
+  border-radius: 20px;
+}
+progress::-webkit-progress-value {
+  background: white;
+
+  border: none;
+  height: 10px;
+  border-radius: 20px;
+}
+progress::-moz-progress-bar {
+  border: none;
+  height: 10px;
+  border-radius: 20px;
+  
+}
+
+
 .make-red {
   background-color: tomato;
 }

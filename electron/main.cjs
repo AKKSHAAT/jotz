@@ -13,14 +13,15 @@ let window = null;
 function createWindow() {
   // Create the browser window.
 
-  const startUrl = process.env.ELECTRON_START_URL;
+  const startUrl = 'http://localhost:5173/';
   window = new BrowserWindow({
     width: 800,
     height: 600,
     titleBarStyle: "hidden",
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
-      nodeIntegration: false
+      nodeIntegration: false,
+      contextIsolation: true
     },
 
     "extraResources": [

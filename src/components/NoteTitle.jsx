@@ -1,9 +1,13 @@
+import { useAtomValue } from 'jotai';
 import React from 'react'
 import { useState } from 'react'
+import { selectedNoteAtom } from '../store/store';
 
 export const NoteTitle = () => {
 
-    const [NoteTitle, setNoteTitle] = useState("one thirty");
+    const selectedNote = useAtomValue(selectedNoteAtom);
+
+    const [NoteTitle, setNoteTitle] = useState(selectedNoteAtom.title || "one thirty");
 
   return (
     <div className='title'>

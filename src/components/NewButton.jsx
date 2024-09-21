@@ -6,7 +6,6 @@ import { db } from '../utils/db';
 export const NewButton = ({classes}) => {
     const navigate = useNavigate();
     const date = new Date(); // To generate IDs
-
     const generateNote = async ()=>{
         const newID = parseInt(date.valueOf());
         const blankNote = {

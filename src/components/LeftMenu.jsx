@@ -1,6 +1,6 @@
 import React, { useReducer, useEffect } from "react";
 import { Explorer } from "./Explorer";
-import { usePomodoro } from "./usePomodoro";
+import { usePomodoro } from "../hooks/usePomodoro";
 
 export const LeftMenu = () => {
   const { RenderTimer, pomodoroTimer } = usePomodoro();
